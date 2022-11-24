@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b850f21f-2f2d-4eeb-9977-2e63ad66c98d" name="Changes" comment="" />
+    <list default="true" id="b850f21f-2f2d-4eeb-9977-2e63ad66c98d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajie_bilibili_api/src/main/java/com/ajie/bilibili/api/UserApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/constant/UserConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/model/UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/utils/TokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_api/src/main/java/com/ajie/bilibili/controller/demoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_api/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_api/src/main/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/dao/DemoDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/resources/mapper/DemoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/resources/mapper/UserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/DenoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/impl/DemoServiceImpl.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,9 +35,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -37,6 +60,7 @@
     <option name="vmOptions" value="-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true -DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectId" id="2HwFKmbr4Vs1kMwTF3OY94B4Skc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,6 +73,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable": "SELECTIVE",
     "jdk.selected.JAVA_MODULE": "1.8",
@@ -57,7 +82,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "project.propCompiler",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "spring.configuration.checksum": "7144d85fcc4c3ba743955bdf688100cd"
   },
   "keyToStringList": {
@@ -115,7 +140,7 @@
       <updated>1669188179118</updated>
       <workItem from="1669188180384" duration="4690000" />
       <workItem from="1669211274628" duration="4000" />
-      <workItem from="1669288543903" duration="2856000" />
+      <workItem from="1669288543903" duration="9253000" />
     </task>
     <servers />
   </component>
