@@ -17,4 +17,6 @@ public class User {
     private String salt;
     private Date createTime;
     private Date updateTime;
+
+    private UserInfo userInfo;
 }

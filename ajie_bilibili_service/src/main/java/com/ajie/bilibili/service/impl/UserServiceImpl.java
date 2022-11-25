@@ -56,8 +56,6 @@ public class UserServiceImpl implements UserService {
         userInfo.setBirth(UserConstant.DEFAULT_BIRTH);
         userInfo.setCreateTime(now);
         userDao.addUserInfo(userInfo);
-
-
     }
 
     public User getUserByPhone(String phone) {
@@ -65,7 +63,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String userLogin(User user) {
+    public String userLogin(User user) throws Exception {
         String phone = user.getPhone();
         if (StringUtils.isNullOrEmpty(phone)) {
             throw new ConditionException("手机号不能为空！");
@@ -81,14 +79,21 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             throw new ConditionException("密码解析失败");
         }
-        String salt = user.getSalt();
+        String salt = dbUser.getSalt();
         String md5Password = MD5Util.sign(rawPassword, salt, "UTF-8");
         if (!md5Password.equals(dbUser.getPassword())) {
             throw new ConditionException("密码错误！");
         }
         //生成token
-        TokenUtil tokenUtil = new TokenUtil();
-        return tokenUtil.generateToken(dbUser.getId());
+        return TokenUtil.generateToken(dbUser.getId());
 
+    }
+
+    @Override
+    public User getUserInfo(Long userId) {
+        User user = userDao.getUserById(userId);
+        UserInfo userInfo = userDao.getUserInfoByUserId(userId);
+        user.setUserInfo(userInfo);
+        return user;
     }
 }
