@@ -3,6 +3,7 @@ package com.ajie.bilibili.api;
 import com.ajie.bilibili.api.support.UserSupport;
 import com.ajie.bilibili.domain.JsonResponse;
 import com.ajie.bilibili.model.User;
+import com.ajie.bilibili.model.UserInfo;
 import com.ajie.bilibili.service.UserService;
 import com.ajie.bilibili.utils.RSAUtil;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +37,7 @@ public class UserApi {
 
     /**
      * 获取请求头token中的用户信息
+     *
      * @return 用户信息
      */
     @GetMapping()
@@ -69,5 +71,25 @@ public class UserApi {
         return new JsonResponse<>(token);
     }
 
+    /**
+     * 获取token用户信息，更新数据库信息
+     * @param user token中用户信息
+     * @return 修改成功
+     */
+    @PutMapping("/updateUsers")
+    public JsonResponse<String> updateUsers(@RequestBody User user) throws Exception {
+        Long userId = userSupport.getCurrentUserId();
+        user.setId(userId);
+        userService.updateUsers(user);
+        return JsonResponse.success();
+    }
+
+    @PutMapping("/updateUserInfos")
+    public JsonResponse<String> updateUserInfos(@RequestBody UserInfo userInfo) throws Exception {
+        Long userId = userSupport.getCurrentUserId();
+        userInfo.setUserId(userId);
+        userService.updateUserInfos(userInfo);
+        return JsonResponse.success();
+    }
 
 }

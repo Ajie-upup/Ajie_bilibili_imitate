@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b850f21f-2f2d-4eeb-9977-2e63ad66c98d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ajie_bilibili_api/src/main/java/com/ajie/bilibili/api/support/UserSupport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajie_bilibili_api/src/main/java/com/ajie/bilibili/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_api/src/main/java/com/ajie/bilibili/api/UserApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/resources/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/resources/mapper/UserDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/utils/TokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/utils/TokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +144,7 @@
       <workItem from="1669211274628" duration="4000" />
       <workItem from="1669288543903" duration="9612000" />
       <workItem from="1669301921813" duration="5000" />
-      <workItem from="1669338304622" duration="5673000" />
+      <workItem from="1669338304622" duration="7695000" />
     </task>
     <task id="LOCAL-00001" summary="完成用户登录注册功能，实现Rsa加密，MD5加密解密">
       <created>1669298465012</created>
@@ -157,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669298465012</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="JWT实现获取token用户信息，更新用户信息">
+      <created>1669344488770</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669344488770</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +168,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完成用户登录注册功能，实现Rsa加密，MD5加密解密" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成用户登录注册功能，实现Rsa加密，MD5加密解密" />
+    <MESSAGE value="JWT实现获取token用户信息，更新用户信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="JWT实现获取token用户信息，更新用户信息" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,7 @@
 package com.ajie.bilibili.service;
 
 import com.ajie.bilibili.model.User;
+import com.ajie.bilibili.model.UserInfo;
 
 /**
  * @Author: ajie
@@ -14,4 +15,8 @@ public interface UserService {
     String userLogin(User user) throws Exception;
 
     User getUserInfo(Long userId);
+
+    void updateUsers(User user)throws Exception;
+
+    void updateUserInfos(UserInfo userInfo);
 }
