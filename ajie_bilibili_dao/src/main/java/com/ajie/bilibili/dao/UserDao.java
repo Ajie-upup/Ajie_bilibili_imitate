@@ -4,6 +4,9 @@ import com.ajie.bilibili.model.User;
 import com.ajie.bilibili.model.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+import java.util.Set;
+
 /**
  * @Author: ajie
  * @Date: 2022/11/24
@@ -24,4 +27,6 @@ public interface UserDao {
     Integer updateUsers(User user);
 
     Integer updateUserInfos(UserInfo userInfo);
+
+    List<UserInfo> getUserInfoByUserIds(Set<Long> userIdList);
 }

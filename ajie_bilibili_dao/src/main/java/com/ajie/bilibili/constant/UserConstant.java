@@ -15,6 +15,9 @@ public interface UserConstant {
 
     public static final String DEFAULT_NICK = "萌新";
 
+    /**
+     * 用户默认分组
+     */
     public static final String USER_FOLLOWING_GROUP_TYPE_DEFAULT = "2";
 
     public static final String USER_FOLLOWING_GROUP_TYPE_USER = "3";

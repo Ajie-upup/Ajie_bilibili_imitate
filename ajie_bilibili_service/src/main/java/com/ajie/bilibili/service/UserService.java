@@ -3,6 +3,9 @@ package com.ajie.bilibili.service;
 import com.ajie.bilibili.model.User;
 import com.ajie.bilibili.model.UserInfo;
 
+import java.util.List;
+import java.util.Set;
+
 /**
  * @Author: ajie
  * @Date: 2022/11/24
@@ -16,7 +19,11 @@ public interface UserService {
 
     User getUserInfo(Long userId);
 
-    void updateUsers(User user)throws Exception;
+    void updateUsers(User user) throws Exception;
 
     void updateUserInfos(UserInfo userInfo);
+
+    User getUserById(Long id);
+
+    List<UserInfo> getUserInfoByUserIds(Set<Long> userIdList);
 }

@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @Author: ajie
@@ -117,5 +119,15 @@ public class UserServiceImpl implements UserService {
     public void updateUserInfos(UserInfo userInfo) {
         userInfo.setUpdateTime(new Date());
         userDao.updateUserInfos(userInfo);
+    }
+
+    @Override
+    public User getUserById(Long id) {
+        return userDao.getUserById(id);
+    }
+
+    @Override
+    public List<UserInfo> getUserInfoByUserIds(Set<Long> userIdList) {
+        return userDao.getUserInfoByUserIds(userIdList);
     }
 }

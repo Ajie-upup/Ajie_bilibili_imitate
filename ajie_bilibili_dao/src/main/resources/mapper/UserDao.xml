@@ -29,6 +29,7 @@
         from t_user_info
         where userId = #{userId}
     </select>
+
     <update id="updateUsers" parameterType="com.ajie.bilibili.model.User">
         update t_user
         set
@@ -67,6 +68,18 @@
         where
         userId = #{userId}
     </update>
+
+    <select id="getUserInfoByUserIds" resultType="com.ajie.bilibili.model.UserInfo">
+        select *
+        from t_user_info
+        where 1 = 1
+        <if test="userIdList != null and userIdList.size > 0">
+            and userId in
+            <foreach collection="userIdList" item="userId" index="index" open="(" close=")" separator=",">
+                #{userId}
+            </foreach>
+        </if>
+    </select>
 
 
 </mapper>
