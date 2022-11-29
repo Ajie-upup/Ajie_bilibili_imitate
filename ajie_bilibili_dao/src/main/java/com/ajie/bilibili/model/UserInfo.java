@@ -17,6 +17,9 @@ public class UserInfo {
     private String sign;
     private String gender;
     private String birth;
+
+    private Boolean followed;
+
     private Date createTime;
     private Date updateTime;
 }

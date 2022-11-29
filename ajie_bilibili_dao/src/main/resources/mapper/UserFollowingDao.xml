@@ -21,4 +21,9 @@
         from t_user_following
         where userId = #{userId}
     </select>
+    <select id="getUserFans" parameterType="java.lang.Long" resultType="com.ajie.bilibili.model.UserFollowing">
+        select *
+        from t_user_following
+        where followingId = #{userId}
+    </select>
 </mapper>

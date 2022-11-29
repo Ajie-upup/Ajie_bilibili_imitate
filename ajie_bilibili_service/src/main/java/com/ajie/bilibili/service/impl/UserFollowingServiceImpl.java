@@ -41,6 +41,7 @@ public class UserFollowingServiceImpl implements UserFollowingService {
      * @param userFollowing 用户关注信息
      */
     @Transactional
+    @Override
     public void addUserFollowings(UserFollowing userFollowing) {
         Long groupId = userFollowing.getGroupId();
         //1、判断分组是否存在
@@ -72,6 +73,7 @@ public class UserFollowingServiceImpl implements UserFollowingService {
      * @param userId 当前用户id
      * @return 按照关注用户进行分组后的用户关注分组列表
      */
+    @Override
     public List<FollowingGroup> getUserFollowings(Long userId) {
         //获取关注用户列表
         List<UserFollowing> list = userFollowingDao.getUserFollowings(userId);
@@ -110,6 +112,40 @@ public class UserFollowingServiceImpl implements UserFollowingService {
             followingGroupList.add(group);
         }
         return followingGroupList;
+    }
+
+    /**
+     * 获取当前用户粉丝列表
+     *
+     * @param userId 当前用户Id
+     * @return
+     */
+    @Override
+    public List<UserFollowing> getUserFans(Long userId) {
+        //获取粉丝列表   --  当前userId匹配的followingId
+        List<UserFollowing> fanList = userFollowingDao.getUserFans(userId);
+        Set<Long> fanIdSet = fanList.stream().map(UserFollowing::getUserId).collect(Collectors.toSet());
+        //根据列表查询用户基本信息
+        List<UserInfo> userInfoList = new ArrayList<>();
+        if (fanIdSet.size() > 0) {
+            userInfoList = userService.getUserInfoByUserIds(fanIdSet);
+        }
+        List<UserFollowing> followingList = userFollowingDao.getUserFollowings(userId);
+
+        for (UserFollowing fan : fanList) {
+            for (UserInfo userinfo : userInfoList) {
+                if (fan.getUserId().equals(userinfo.getUserId())) {
+                    userinfo.setFollowed(false);
+                    fan.setUserInfo(userinfo);
+                }
+            }
+            for (UserFollowing following : followingList) {
+                if (following.getUserId().equals(fan.getUserId())) {
+                    fan.getUserInfo().setFollowed(true);
+                }
+            }
+        }
+        return fanList;
     }
 
 

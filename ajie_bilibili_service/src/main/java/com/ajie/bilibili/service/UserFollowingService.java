@@ -1,7 +1,9 @@
 package com.ajie.bilibili.service;
 
+import com.ajie.bilibili.model.FollowingGroup;
 import com.ajie.bilibili.model.UserFollowing;
-import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @Author: ajie
@@ -9,4 +11,9 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface UserFollowingService {
 
+    void addUserFollowings(UserFollowing userFollowing);
+
+    List<FollowingGroup> getUserFollowings(Long currentUserId);
+
+    List<UserFollowing> getUserFans(Long currentUserId);
 }
