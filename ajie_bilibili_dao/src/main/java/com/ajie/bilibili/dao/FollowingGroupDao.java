@@ -16,4 +16,8 @@ public interface FollowingGroupDao {
     FollowingGroup getById(Long id);
 
     List<FollowingGroup> getByUserId(Long userId);
+
+    Integer addUserFollowingGroups(FollowingGroup followingGroups);
+
+    List<FollowingGroup> getUserFollowingGroups(Long userId);
 }

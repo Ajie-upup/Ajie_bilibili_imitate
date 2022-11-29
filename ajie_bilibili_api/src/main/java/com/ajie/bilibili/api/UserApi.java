@@ -2,13 +2,17 @@ package com.ajie.bilibili.api;
 
 import com.ajie.bilibili.api.support.UserSupport;
 import com.ajie.bilibili.domain.JsonResponse;
+import com.ajie.bilibili.domain.PageResult;
 import com.ajie.bilibili.model.User;
 import com.ajie.bilibili.model.UserInfo;
+import com.ajie.bilibili.service.UserFollowingService;
 import com.ajie.bilibili.service.UserService;
 import com.ajie.bilibili.utils.RSAUtil;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Author: ajie
@@ -23,6 +27,9 @@ public class UserApi {
 
     @Resource
     private UserSupport userSupport;
+
+    @Resource
+    private UserFollowingService userFollowingService;
 
     /**
      * 获取rsa公钥
@@ -85,6 +92,12 @@ public class UserApi {
         return JsonResponse.success();
     }
 
+    /**
+     * 更新用户基本信息
+     * @param userInfo 用户基本信息
+     * @return
+     * @throws Exception
+     */
     @PutMapping("/updateUserInfos")
     public JsonResponse<String> updateUserInfos(@RequestBody UserInfo userInfo) throws Exception {
         Long userId = userSupport.getCurrentUserId();
@@ -92,5 +105,29 @@ public class UserApi {
         userService.updateUserInfos(userInfo);
         return JsonResponse.success();
     }
+
+    /**
+     * 获取用户信息分页查询
+     * @param no 当前页面num
+     * @param size 页面大小
+     * @param nick 用户昵称
+     * @return
+     */
+    @GetMapping("/getUserInfos")
+    public JsonResponse<PageResult<UserInfo>> getUserInfos(@RequestParam Integer no, @RequestParam Integer size, String nick) {
+        Long userId = userSupport.getCurrentUserId();
+        JSONObject params = new JSONObject();
+        params.put("no", no);
+        params.put("size", size);
+        params.put("nick", nick);
+        params.put("userId", userId);
+        PageResult<UserInfo> result = userService.pageListUserInfos(params);
+        if (result.getTotal() > 0) {
+            List<UserInfo> checkedUserInfoList = userFollowingService.checkFollowingStatus(result.getList(), userId);
+            result.setList(checkedUserInfoList);
+        }
+        return new JsonResponse<>(result);
+    }
+
 
 }

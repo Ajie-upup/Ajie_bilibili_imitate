@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b850f21f-2f2d-4eeb-9977-2e63ad66c98d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/domain/PageResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajie_bilibili_api/src/main/java/com/ajie/bilibili/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_api/src/main/java/com/ajie/bilibili/api/UserApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajie_bilibili_api/src/main/java/com/ajie/bilibili/api/UserFollowingApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_api/src/main/java/com/ajie/bilibili/api/UserFollowingApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/dao/UserFollowingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/dao/UserFollowingDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/model/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/model/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/resources/mapper/UserFollowingDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/resources/mapper/UserFollowingDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/dao/FollowingGroupDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/dao/FollowingGroupDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/java/com/ajie/bilibili/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/resources/mapper/FollowingGroupDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/resources/mapper/FollowingGroupDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/resources/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_dao/src/main/resources/mapper/UserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/FollowingGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/FollowingGroupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/UserFollowingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/UserFollowingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/impl/FollowingGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/impl/FollowingGroupServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/impl/UserFollowingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/impl/UserFollowingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ajie_bilibili_service/src/main/java/com/ajie/bilibili/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +158,7 @@
       <workItem from="1669604376051" duration="9000" />
       <workItem from="1669619057861" duration="4535000" />
       <workItem from="1669644490055" duration="137000" />
-      <workItem from="1669725288888" duration="2310000" />
+      <workItem from="1669725288888" duration="5720000" />
     </task>
     <task id="LOCAL-00001" summary="完成用户登录注册功能，实现Rsa加密，MD5加密解密">
       <created>1669298465012</created>
@@ -182,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669623048619</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完善添加用户关注，获取用户关注列表,获取粉丝列表接口">
+      <created>1669727663611</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669727663611</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +217,8 @@
     <MESSAGE value="JWT实现获取token用户信息，更新用户信息" />
     <MESSAGE value="完善更新用户信息，更新用户功能" />
     <MESSAGE value="完善添加用户关注，获取用户关注列表" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善添加用户关注，获取用户关注列表" />
+    <MESSAGE value="完善添加用户关注，获取用户关注列表,获取粉丝列表接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善添加用户关注，获取用户关注列表,获取粉丝列表接口" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,16 +3,19 @@ package com.ajie.bilibili.service.impl;
 import com.ajie.bilibili.constant.UserConstant;
 import com.ajie.bilibili.dao.UserDao;
 import com.ajie.bilibili.domain.ConditionException;
+import com.ajie.bilibili.domain.PageResult;
 import com.ajie.bilibili.model.User;
 import com.ajie.bilibili.model.UserInfo;
 import com.ajie.bilibili.service.UserService;
 import com.ajie.bilibili.utils.MD5Util;
 import com.ajie.bilibili.utils.RSAUtil;
 import com.ajie.bilibili.utils.TokenUtil;
+import com.alibaba.fastjson.JSONObject;
 import com.mysql.cj.util.StringUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -129,5 +132,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserInfo> getUserInfoByUserIds(Set<Long> userIdList) {
         return userDao.getUserInfoByUserIds(userIdList);
+    }
+
+    @Override
+    public PageResult<UserInfo> pageListUserInfos(JSONObject params) {
+        Integer no = params.getInteger("no");
+        Integer size = params.getInteger("size");
+        params.put("start", (no-1)*size);
+        params.put("limit", size);
+        Integer total = userDao.pageCountUserInfos(params);
+        List<UserInfo> list = new ArrayList<>();
+        if(total > 0){
+            list = userDao.pageListUserInfos(params);
+        }
+        return new PageResult<>(total, list);
     }
 }

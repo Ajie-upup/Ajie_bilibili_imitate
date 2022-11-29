@@ -3,6 +3,7 @@
 
 <mapper namespace="com.ajie.bilibili.dao.FollowingGroupDao">
 
+
     <select id="getByType" parameterType="java.lang.String" resultType="com.ajie.bilibili.model.FollowingGroup">
         select *
         from t_following_group
@@ -18,5 +19,18 @@
         from t_following_group
         where userId = #{userId}
            or `type` in ('0', '1', '2')
+    </select>
+
+    <insert id="addUserFollowingGroups" parameterType="com.ajie.bilibili.model.FollowingGroup" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into t_following_group(userId, `name`, `type`, createTime)
+        values (#{userId}, #{name}, #{type}, #{createTime})
+    </insert>
+
+    <select id="getUserFollowingGroups" parameterType="java.lang.Long"
+            resultType="com.ajie.bilibili.model.FollowingGroup">
+        select *
+        from t_following_group
+        where userId = #{userId}
     </select>
 </mapper>

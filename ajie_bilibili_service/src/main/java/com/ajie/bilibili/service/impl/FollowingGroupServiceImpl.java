@@ -33,4 +33,15 @@ public class FollowingGroupServiceImpl implements FollowingGroupService {
         return followingGroupDao.getByUserId(userId);
     }
 
+    @Override
+    public Integer addUserFollowingGroups(FollowingGroup followingGroups) {
+        followingGroupDao.addUserFollowingGroups(followingGroups);
+        return null;
+    }
+
+    @Override
+    public List<FollowingGroup> getUserFollowingGroups(Long userId) {
+        return followingGroupDao.getUserFollowingGroups(userId);
+    }
+
 }
